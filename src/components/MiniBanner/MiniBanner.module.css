@@ -1,0 +1,22 @@
+.bannerContainer {
+  height: 160px;
+  width: 100%;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1018%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(0%2c 0%2c 0%2c 1)'%3e%3c/rect%3e%3cpath d='M1439.422%2c666.596C1485.558%2c665.172%2c1525.684%2c638.569%2c1549.573%2c599.074C1574.436%2c557.968%2c1586.381%2c506.084%2c1561.286%2c465.12C1536.986%2c425.453%2c1485.854%2c416.431%2c1439.422%2c419.266C1398.403%2c421.77%2c1363.397%2c444.209%2c1340.865%2c478.576C1315.415%2c517.394%2c1295.279%2c565.146%2c1316.829%2c606.257C1339.493%2c649.493%2c1390.629%2c668.102%2c1439.422%2c666.596' fill='rgba(229%2c 36%2c 51%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M549.89%2c401.422C564.856%2c401.073%2c579.868%2c396.394%2c587.884%2c383.751C596.462%2c370.222%2c597.925%2c352.571%2c589.506%2c338.943C581.434%2c325.876%2c565.245%2c322.601%2c549.89%2c322.245C533.673%2c321.869%2c515.804%2c323.432%2c506.962%2c337.031C497.498%2c351.587%2c499.069%2c371.15%2c508.7%2c385.596C517.445%2c398.713%2c534.129%2c401.789%2c549.89%2c401.422' fill='rgba(229%2c 36%2c 51%2c 1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M139.161%2c276.919C164.834%2c274.778%2c179.801%2c250.895%2c192.662%2c228.573C205.493%2c206.303%2c220.506%2c180.398%2c207.564%2c158.192C194.669%2c136.069%2c164.767%2c136.584%2c139.161%2c136.781C114.05%2c136.974%2c86.954%2c138.656%2c72.552%2c159.228C56.175%2c182.62%2c53.532%2c214.151%2c67.597%2c239.002C81.848%2c264.183%2c110.327%2c279.323%2c139.161%2c276.919' fill='rgba(229%2c 36%2c 51%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M920.609%2c701.52C969.827%2c700.247%2c1007.612%2c660.351%2c1028.482%2c615.759C1046.323%2c577.639%2c1035.542%2c535.702%2c1015.548%2c498.666C994.177%2c459.078%2c965.469%2c419.333%2c920.609%2c415.941C870.673%2c412.165%2c821.977%2c438.707%2c797.056%2c482.145C772.243%2c525.395%2c778.153%2c578.154%2c802.622%2c621.599C827.607%2c665.96%2c869.713%2c702.836%2c920.609%2c701.52' fill='rgba(229%2c 36%2c 51%2c 1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M737.751%2c586.402C770.39%2c586.91%2c796.38%2c562.976%2c813.349%2c535.09C831.184%2c505.781%2c843.142%2c470.196%2c826.835%2c440.01C809.898%2c408.658%2c773.377%2c394.379%2c737.751%2c395.152C703.513%2c395.895%2c670.926%2c413.356%2c655.118%2c443.735C640.318%2c472.176%2c650.054%2c505.054%2c666.123%2c532.797C682.143%2c560.456%2c705.792%2c585.904%2c737.751%2c586.402' fill='rgba(229%2c 36%2c 51%2c 1)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M575.506%2c224.647C613.447%2c223.779%2c646.425%2c200.738%2c665.222%2c167.769C683.831%2c135.131%2c684.513%2c96.327%2c667.875%2c62.642C648.898%2c24.221%2c618.347%2c-12.892%2c575.506%2c-13.872C531.474%2c-14.879%2c495.911%2c19.204%2c475.518%2c58.243C456.688%2c94.29%2c457.445%2c137.18%2c478.391%2c172.04C498.714%2c205.863%2c536.057%2c225.549%2c575.506%2c224.647' fill='rgba(229%2c 36%2c 51%2c 1)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1018'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  padding: 160px 0 0 50px;
+  margin-top: -140px;
+  position: relative;
+  z-index: 1000;
+  overflow: hidden;
+}
+.bannerContainer::before {
+  content: "";
+  position: absolute;
+  height: 798px;
+  width: 143px;
+  background-color: #e52433;
+  top: -162px;
+  transform: rotate(45deg);
+  z-index: 0;
+  transition: 0.5s;
+  right: 45px;
+}

@@ -1,0 +1,56 @@
+.souContainer {
+  background: url("../../assets/images/background5.jpg");
+  background-color: rgba(0, 0, 0, 0.254);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.loginContainer {
+  background: radial-gradient(
+    circle at -8.9% 48%,
+    #1596a7 15.8%,
+    #172229 15.9%,
+    #141e25 24.4%,
+    #202a31 24.5%,
+    #202a31 40.4%,
+    rgb(19, 30, 37) 40.5%,
+    rgba(19, 30, 37, 0.94) 66%
+  );
+  width: 100%;
+  height: 100vh;
+  padding-top: 30vh;
+}
+
+.loginFormRow {
+  width: 33%;
+  height: 300px;
+  margin: auto;
+}
+.first {
+  padding: 20px;
+  position: relative;
+  box-shadow: rgba(7, 7, 7, 0.2) 0px 8px 24px;
+  display: block;
+  width: 100%;
+  height: 300px;
+  top: -50px;
+  left: -40px;
+  background: #198c9bb1;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+.first:hover {
+  left: 40px;
+}
+
+.first input {
+  color: rgb(204, 204, 204);
+  margin-bottom: 20px;
+  border: none;
+  background-color: rgb(0 0 0 / 34%) !important;
+}
+.second {
+  width: 100%;
+  box-shadow: rgba(7, 7, 7, 0.2) 0px 0px 24px;
+  position: relative;
+  border-radius: 5px;
+}

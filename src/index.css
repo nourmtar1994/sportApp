@@ -1,0 +1,126 @@
+/* html {
+  overflow-x: hidden;
+} */
+html * {
+  font-family: "Cairo", sans-serif;
+}
+body {
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.btn {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  background-color: #fff;
+  color: #999;
+  transition: background-color 0.3s;
+  border-radius: 50vw;
+  padding: 12px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #fff;
+}
+
+.btn > * {
+  position: relative;
+}
+
+.btn span {
+  display: block;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236, 240, 241, 0.6);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width 0.2s ease-out, padding-top 0.2s ease-out;
+}
+
+h2 {
+  font-weight: normal;
+}
+
+.btn.orange {
+  background-color: #e67e22;
+}
+
+.btn.orange:hover,
+.btn.orange:focus {
+  background-color: #d35400;
+}
+
+.btn.red {
+  background-color: #e74c3c;
+}
+
+.btn.red:hover,
+.btn.red:focus {
+  background-color: #c0392b;
+}
+
+.anime_border {
+  display: inline-block;
+}
+
+.anime_border::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: grey;
+  transition: width 0.3s;
+}
+
+.anime_border:hover::after {
+  width: 100%;
+}
+
+.text-secondary {
+  color: #999 !important;
+}
+.text-white {
+  color: #fff !important;
+}
+
+.text-primary {
+  color: #26c6da !important;
+}
+.ant-badge-count {
+  box-shadow: none !important;
+}
+
+/* .slick-prev {
+  background-color: aqua !important;
+} */

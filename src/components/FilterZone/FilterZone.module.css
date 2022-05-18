@@ -1,0 +1,23 @@
+.filterContainer {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  padding: 10px;
+}
+.filterContainer .filterGroup {
+  display: grid;
+}
+
+.filterContainer .title {
+  color: #e52433;
+  line-height: 30px;
+}
+
+.filterContainer .icon {
+  font-size: 1.3em;
+  position: absolute;
+  left: 15px;
+  top: 9px;
+  color: #306ca7;
+  cursor: pointer;
+}

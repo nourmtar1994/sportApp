@@ -1,0 +1,38 @@
+.AppHeader {
+  position: relative;
+  height: 120px;
+  min-height: 64px;
+  width: 100%;
+  align-items: center;
+  /* background: linear-gradient(195deg, #1d3557, #30517e); */
+  background-color: transparent;
+
+  /* background: linear-gradient(45deg, #42424a, #191919c9); */
+  z-index: 1000;
+}
+
+.AppHeader::before {
+  content: "";
+  width: 30%;
+  height: 80px;
+  /* background-color: #e52433; */
+  position: absolute;
+  border-radius: 11px 0px 0px 11px;
+  overflow: hidden;
+}
+.AppHeader .logoContainer {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.AppHeader .app_title {
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  text-align: right;
+}
+
+.AppHeader .logoContainer .app_logo img {
+  width: 80px;
+}

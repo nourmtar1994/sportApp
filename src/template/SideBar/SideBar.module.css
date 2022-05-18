@@ -1,0 +1,34 @@
+.sideBar {
+  height: 100vh;
+}
+.collapseBtnContainer {
+  position: absolute;
+  transition: 0.2s !important;
+  transform: translateX(15px);
+}
+.icon_SB_collapse {
+  font-weight: bold;
+  font-size: 1.6em !important;
+  color: #fff !important;
+  transition: 0.3s !important;
+  font-weight: 800;
+  background-color: rgba(5, 5, 5, 0.231);
+  opacity: 0.7;
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.icon_SB_collapse:hover {
+  opacity: 1;
+}
+
+.divider {
+  background: #8080808a;
+  margin: 10px 0 !important;
+}
+.appLogo_Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
