@@ -26,6 +26,8 @@ const Configuration = React.lazy(() =>
   import("./components/Configuration/Configuration")
 );
 
+const AppData = React.lazy(() => import("./components/AppData/AppData"));
+
 const Personnel = React.lazy(() => import("./components/Personnel/Personnel"));
 
 const App = () => {
@@ -86,6 +88,13 @@ const App = () => {
               exact
               component={Configuration}
               title="Configuration"
+            />
+
+            <ProtectedRoute
+              path="/appdata"
+              exact
+              component={AppData}
+              title="AppData"
             />
           </Switch>
 

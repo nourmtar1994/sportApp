@@ -11,7 +11,12 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { Col, Result, Row, Statistic } from "antd";
-import { UserOutlined } from "@ant-design/icons";
+import {
+  DashboardOutlined,
+  ScheduleOutlined,
+  TeamOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 
 ChartJS.register(
   CategoryScale,
@@ -88,6 +93,7 @@ const LineCharts = ({ chartData }) => {
       labels: chartData.year,
       datasets: [
         {
+          legend: "lklkl",
           label: "مؤشر الكتلة البدنية",
           data: chartData.bmi,
           borderColor: "#742774",
@@ -118,7 +124,7 @@ const LineCharts = ({ chartData }) => {
               <Statistic
                 title="العدد الجملي"
                 value={chartData.nbrPersonnel}
-                prefix={<UserOutlined />}
+                prefix={<TeamOutlined />}
               />
             </Col>
             <Col span={8}>
@@ -131,7 +137,7 @@ const LineCharts = ({ chartData }) => {
                     0
                   ) / chartData?.moyenTest?.length
                 }
-                prefix={<UserOutlined />}
+                prefix={<ScheduleOutlined />}
               />
             </Col>
             <Col span={8}>
@@ -142,11 +148,11 @@ const LineCharts = ({ chartData }) => {
                   chartData?.bmi?.reduce((partialSum, a) => partialSum + a, 0) /
                   chartData?.bmi?.length
                 }
-                prefix={<UserOutlined />}
+                prefix={<DashboardOutlined />}
               />
             </Col>
           </Row>
-          <Line data={data} options={options} />
+          <Line height={100} data={data} options={options} />
         </>
       ) : (
         <Result status="warning" title="إختر القاعدة " />

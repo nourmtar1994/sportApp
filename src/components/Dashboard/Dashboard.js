@@ -214,6 +214,7 @@ const Dashboard = ({ data }) => {
       </Col>
       <Col span={8}>
         <Card
+          hoverable
           title="الأصناف العمرية"
           style={{ width: "100%" }}
           cover={<PieChart data={ageCategory} />}
@@ -224,6 +225,7 @@ const Dashboard = ({ data }) => {
 
       <Col span={8}>
         <Card
+          hoverable
           title="أصناف الرتب"
           style={{ width: "100%" }}
           cover={<PieChart data={gradeCategory} />}

@@ -98,6 +98,7 @@ const LineBar = ({ bmiData }) => {
   };
   return (
     <Bar
+      height={120}
       plugins={[
         {
           id: "backgrounds",
