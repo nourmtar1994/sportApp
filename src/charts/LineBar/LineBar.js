@@ -34,7 +34,6 @@ const LineBar = ({ bmiData }) => {
 
         backgroundColor: [
           "#e52433",
-          "black",
           "rgba(255, 206, 86)",
           "rgba(75, 192, 192)",
           "rgba(153, 102, 255)",
@@ -42,7 +41,6 @@ const LineBar = ({ bmiData }) => {
         ],
         borderColor: [
           "rgba(255, 99, 132, 1)",
-          "rgba(0, 0, 0, 0.9)",
           "rgba(255, 206, 86, 1)",
           "rgba(75, 192, 192, 1)",
           "rgba(153, 102, 255, 1)",
@@ -53,6 +51,16 @@ const LineBar = ({ bmiData }) => {
     ],
   };
   const options = {
+    scales: {
+      x: {
+        ticks: {
+          font: {
+            size: 19,
+            weight: 700,
+          },
+        },
+      },
+    },
     responsive: true,
     plugins: {
       backgrounds: {
@@ -66,8 +74,16 @@ const LineBar = ({ bmiData }) => {
       },
       legend: false,
       title: {
+        position: "bottom",
         display: false,
         text: "Chart.js Bar Chart",
+      },
+      scales: {
+        xAxis: {
+          // The axis for this scale is determined from the first letter of the id as `'x'`
+          // It is recommended to specify `position` and / or `axis` explicitly.
+          type: "time",
+        },
       },
     },
     onClick: function (evt, element) {

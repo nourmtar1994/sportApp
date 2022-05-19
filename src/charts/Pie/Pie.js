@@ -17,21 +17,13 @@ const PieChart = ({ data }) => {
           label: "# of Votes",
           data: data.data,
           backgroundColor: [
-            "rgba(255, 99, 132, 1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-            "rgba(255, 159, 64, 1)",
+            "#FF6B6B",
+            "#FFD93D",
+            "#6BCB77",
+            "#4D96FF",
+            "#143F6B",
           ],
-          borderColor: [
-            "rgba(255, 99, 132, 1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-            "rgba(255, 159, 64, 1)",
-          ],
+          borderColor: ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF", "#143F6B"],
           borderWidth: 1,
         },
       ],
@@ -39,34 +31,16 @@ const PieChart = ({ data }) => {
   }, [data]);
 
   const options = {
-    responsive: true,
-    legend: {
-      position: "bottom",
-    },
-    title: {
-      display: false,
-      text: "Chart.js Doughnut Chart",
-    },
-    animation: {
-      animateScale: true,
-      animateRotate: true,
-    },
-    tooltips: {
-      callbacks: {
-        label: function (tooltipItem, data) {
-          var dataset = data.datasets[tooltipItem.datasetIndex];
-          var total = dataset.data.reduce(function (
-            previousValue,
-            currentValue,
-            currentIndex,
-            array
-          ) {
-            return previousValue + currentValue;
-          });
-          var currentValue = dataset.data[tooltipItem.index];
-          var percentage = Math.floor((currentValue / total) * 100 + 0.5);
-          return percentage + "%";
+    plugins: {
+      legend: {
+        labels: {
+          // This more specific font property overrides the global property
+          font: {
+            size: 18,
+            weight: 700,
+          },
         },
+        position: "bottom",
       },
     },
   };

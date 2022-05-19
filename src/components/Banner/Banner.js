@@ -10,8 +10,8 @@ const Banner = () => {
           <Typography.Title level={2} className={"text-white"}>
             منضومة الأنشطة الرياضية
           </Typography.Title>
-          <Typography.Text className="text-secondary" strong>
-            تمكن منضومة الأنشطة الجوية من التصرف في الأنشطة الرياضية للأفراد
+          <Typography.Text className="text-white" strong>
+            تمكن منضومة الأنشطة الرياضية من التصرف في الأنشطة الرياضية للأفراد
             بالجيش التونسي كما توفر إحصائيات و نضرة عامة حول هذه الأنشطة
           </Typography.Text>
           <br />

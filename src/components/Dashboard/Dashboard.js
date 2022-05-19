@@ -17,14 +17,25 @@ import LineBar from "../../charts/LineBar/LineBar";
 import { FcBarChart } from "react-icons/fc";
 import DashFliterZone from "../DashFilterZone/DashFilterZone";
 import { dataFromApi } from "../../redux/data";
+import { baseInfo } from "../../redux/data2";
 import PieChart from "../../charts/Pie/Pie";
 import { LikeOutlined, UserOutlined } from "@ant-design/icons";
+import LineCharts from "../../charts/LineChart/LineCharts";
 
 const { Option } = Select;
 const Dashboard = ({ data }) => {
   const mode = useSelector((state) => state.mode.value);
   const [appMode, setAppMode] = useState(mode);
   const [personeldata, setPersoneldata] = useState([]);
+
+  const [gradeCategory, setGradeCategory] = useState([]);
+  const [ageCategory, setageCategory] = useState([]);
+  const [typeFunction, setTypeFunction] = useState([]);
+  const [bmiData, setBmiData] = useState(null);
+  const [base, setBase] = useState();
+  const [unite, setUnite] = useState();
+  const [baseInfoData, setBaseInfoData] = useState([]);
+
   useEffect(() => {
     console.log(appMode);
     setAppMode(mode === "dark" ? classes.mode : "");
@@ -36,13 +47,12 @@ const Dashboard = ({ data }) => {
     personeldata?.length > 0 && getGradePourcent();
     personeldata?.length > 0 && getBmi();
     personeldata?.length > 0 && getBase();
+    personeldata?.length > 0 && getUnite();
   }, [personeldata]);
 
-  const [gradeCategory, setGradeCategory] = useState([]);
-  const [ageCategory, setageCategory] = useState([]);
-  const [typeFunction, setTypeFunction] = useState([]);
-  const [bmiData, setBmiData] = useState(null);
-  const [base, setBase] = useState();
+  useEffect(() => {
+    baseInfo?.length > 0 && setBaseInfoData(baseInfo[0]);
+  }, [personeldata]);
 
   const groupBy = (xs, key) => {
     return xs.reduce(function (rv, x) {
@@ -51,7 +61,6 @@ const Dashboard = ({ data }) => {
     }, {});
   };
 
-  console.log(base);
   const getGradePourcent = () => {
     setGradeCategory({
       category: ["ضباط", "ضباط صف", "رجال جيش"],
@@ -65,9 +74,11 @@ const Dashboard = ({ data }) => {
     setageCategory({
       category: ["ص", "ه", "د", "ب", "أ"],
       data: [
-        personeldata?.filter((item) => item?.type_age === "أ").length,
-        personeldata?.filter((item) => item?.type_age === "ب").length,
-        personeldata?.filter((item) => item?.type_age === "د").length,
+        personeldata?.filter((item) => item?.type_age == "أ").length,
+        personeldata?.filter((item) => item?.type_age == "ب").length,
+        personeldata?.filter((item) => item?.type_age == "د").length,
+        personeldata?.filter((item) => item?.type_age == "ه").length,
+        personeldata?.filter((item) => item?.type_age == "ص").length,
       ],
     });
     setTypeFunction({
@@ -101,9 +112,36 @@ const Dashboard = ({ data }) => {
 
     setBmiData(bmiMoyene);
   };
-
   const getBase = () => {
-    setBase(personeldata?.map((item) => item.base));
+    setBase([...new Set(dataFromApi?.personnel?.map((item) => item.base))]);
+  };
+
+  const getUnite = () => {
+    setUnite([...new Set(dataFromApi?.personnel?.map((item) => item.unite))]);
+  };
+
+  const getBaseInfo = (value) => {
+    setBaseInfoData(baseInfo?.filter((item) => item.name === value)[0]);
+  };
+
+  const filterPersonnelByBase = (base) => {
+    if (base) {
+      setPersoneldata(
+        dataFromApi?.personnel?.filter((item) => item.base === base)
+      );
+    } else {
+      setPersoneldata(dataFromApi?.personnel);
+    }
+  };
+
+  const filterPersonnelByUnite = (unite) => {
+    if (unite) {
+      setPersoneldata(
+        dataFromApi?.personnel?.filter((item) => item.unite === unite)
+      );
+    } else {
+      setPersoneldata(dataFromApi?.personnel);
+    }
   };
 
   return (
@@ -119,35 +157,29 @@ const Dashboard = ({ data }) => {
         </Typography.Title>
       </Col>
 
-      <Col span={6}>
-        <Statistic
-          title="العدد الجملي"
-          value={1128}
-          prefix={<UserOutlined />}
-        />
-      </Col>
-      <Col span={6}>
-        <Statistic
-          title="التأهيلات الرياضية"
-          value={1128}
-          prefix={<UserOutlined />}
-        />
-      </Col>
-      <Col span={6}>
-        <Statistic
-          title="الإعفاءات الوقتية"
-          value={93}
-          suffix="/ 100"
-          prefix={<UserOutlined />}
-        />
-      </Col>
-      <Col span={6}>
-        <Statistic
-          title="الإعفاءات النهائية"
-          value={93}
-          suffix="/ 100"
-          prefix={<UserOutlined />}
-        />
+      <Col span={24}>
+        <Card
+          extra={
+            <Select
+              placeholder="حسب القواعد"
+              style={{ width: 200, margin: "0 8px" }}
+              onChange={(e) => getBaseInfo(e)}
+              defaultValue="القاعدة الجوية بالعوينة"
+            >
+              {baseInfo?.map((item, index) => (
+                <Option value={item.name} key={index}>
+                  {item.name}
+                </Option>
+              ))}
+            </Select>
+          }
+          title=" معدل الإختبارات الرياضية/مؤشر الكتلة البدنية"
+          hoverable
+          style={{ width: "100%" }}
+          cover={<LineCharts chartData={baseInfoData} />}
+        >
+          {/* <Meta description="www.instagram.com" /> */}
+        </Card>
       </Col>
 
       <Col span={24}>
@@ -155,9 +187,10 @@ const Dashboard = ({ data }) => {
 
         <span>
           <Select
+            allowClear
             placeholder="حسب القواعد"
             style={{ width: 200, margin: "0 8px" }}
-            onChange={(e) => console.log(e)}
+            onChange={(e) => filterPersonnelByBase(e)}
           >
             {base?.map((item, index) => (
               <Option value={item} key={index}>
@@ -166,9 +199,17 @@ const Dashboard = ({ data }) => {
             ))}
           </Select>
           <Select
+            allowClear
+            onChange={(e) => filterPersonnelByUnite(e)}
             placeholder="حسب الوحدات"
             style={{ width: 150, margin: "0 8px" }}
-          ></Select>
+          >
+            {unite?.map((item, index) => (
+              <Option value={item} key={index}>
+                {item}
+              </Option>
+            ))}
+          </Select>
         </span>
       </Col>
       <Col span={8}>

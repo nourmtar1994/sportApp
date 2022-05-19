@@ -167,7 +167,7 @@ const Personnel = (props) => {
           <DataTables columns={columns} data={data} />
         </Col>
       </div>
-      <PersonnelInfo />
+      {/* <PersonnelInfo /> */}
       <PersonnelEdit
         visible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
